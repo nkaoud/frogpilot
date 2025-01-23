@@ -65,7 +65,7 @@ frogpilot_default_params: list[tuple[str, str | bytes, int]] = [
   ("AdjacentPathMetrics", "0", 3),
   ("AdvancedCustomUI", "0", 2),
   ("AdvancedLateralTune", "0", 3),
-  ("AggressiveFollow", "0.2", 2),
+  ("AggressiveFollow", "1.25", 2),
   ("AggressiveJerkAcceleration", "50", 3),
   ("AggressiveJerkDanger", "100", 3),
   ("AggressiveJerkDeceleration", "50", 3),
@@ -497,7 +497,7 @@ class FrogPilotVariables:
     toggle.aggressive_jerk_danger = clip(params.get_int("AggressiveJerkDanger") / 100, 0.01, 5) if aggressive_profile and tuning_level >= level["AggressiveJerkDanger"] else clip(default.get_int("AggressiveJerkDanger") / 100, 0.01, 5)
     toggle.aggressive_jerk_speed = clip(params.get_int("AggressiveJerkSpeed") / 100, 0.01, 5) if aggressive_profile and tuning_level >= level["AggressiveJerkSpeed"] else clip(default.get_int("AggressiveJerkSpeed") / 100, 0.01, 5)
     toggle.aggressive_jerk_speed_decrease = clip(params.get_int("AggressiveJerkSpeedDecrease") / 100, 0.01, 5) if aggressive_profile and tuning_level >= level["AggressiveJerkSpeedDecrease"] else clip(default.get_int("AggressiveJerkSpeedDecrease") / 100, 0.01, 5)
-    toggle.aggressive_follow = clip(params.get_float("AggressiveFollow"), 0.2, 5) if aggressive_profile and tuning_level >= level["AggressiveFollow"] else clip(default.get_float("AggressiveFollow"), 0.2, 5)
+    toggle.aggressive_follow = clip(params.get_float("AggressiveFollow"), 1, 5) if aggressive_profile and tuning_level >= level["AggressiveFollow"] else clip(default.get_float("AggressiveFollow"), 1, 5)
     standard_profile = toggle.custom_personalities and (params.get_bool("StandardPersonalityProfile") if tuning_level >= level["StandardPersonalityProfile"] else default.get_bool("StandardPersonalityProfile"))
     toggle.standard_jerk_acceleration = clip(params.get_int("StandardJerkAcceleration") / 100, 0.01, 5) if standard_profile and tuning_level >= level["StandardJerkAcceleration"] else clip(default.get_int("StandardJerkAcceleration") / 100, 0.01, 5)
     toggle.standard_jerk_deceleration = clip(params.get_int("StandardJerkDeceleration") / 100, 0.01, 5) if standard_profile and tuning_level >= level["StandardJerkDeceleration"] else clip(default.get_int("StandardJerkDeceleration") / 100, 0.01, 5)
