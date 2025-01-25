@@ -40,7 +40,7 @@ A_CHANGE_COST = 200.
 DANGER_ZONE_COST = 100.
 CRASH_DISTANCE = .25
 #LEAD_DANGER_FACTOR = 0.75
-LEAD_DANGER_FACTOR = 0.30
+LEAD_DANGER_FACTOR = 0.35
 #LEAD_DANGER_FACTOR = 0.25
 #LEAD_DANGER_FACTOR = 0.15
 LIMIT_COST = 1e6
@@ -190,8 +190,8 @@ def gen_long_ocp():
   # from an obstacle at every timestep. This obstacle can be a lead car
   # or other object. In e2e mode we can use x_position targets as a cost
   # instead.
-  #  origunal values (v_ego + 10.),
-  costs = [((x_obstacle - x_ego) - (desired_dist_comfort)) / (v_ego + 7.),
+  ##  origunal values (v_ego + 10.), ##
+  costs = [((x_obstacle - x_ego) - (desired_dist_comfort)) / (v_ego + 8.),
            x_ego,
            v_ego,
            a_ego,
@@ -206,8 +206,8 @@ def gen_long_ocp():
   constraints = vertcat(v_ego,
                         (a_ego - a_min),
                         (a_max - a_ego),
-                        ((x_obstacle - x_ego) - lead_danger_factor * (desired_dist_comfort)) / (v_ego + 7.))
-  #  origunal values (v_ego + 10.),
+                        ((x_obstacle - x_ego) - lead_danger_factor * (desired_dist_comfort)) / (v_ego + 8.))
+  ##  origunal values (v_ego + 10.), ##
   ocp.model.con_h_expr = constraints
 
   x0 = np.zeros(X_DIM)
