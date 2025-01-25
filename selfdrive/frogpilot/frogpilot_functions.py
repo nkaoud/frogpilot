@@ -106,10 +106,10 @@ def convert_params(params_storage):
   update_values(priority_keys, {"Offline Maps": "Map Data"})
 
   #  bottom_key = ["StartupMessageBottom"]
-  #  update_values(bottom_key, {"so I do what I want 🐸": "Human-tested, frog-approved 🐸"})
+  #  update_values(bottom_key, {"so I do what I want 🐸": ""})
 
   #  top_key = ["StartupMessageTop"]
-  #  update_values(top_key, {"Hippity hoppity this is my property": "Hop in and buckle up!"})
+  #  update_values(top_key, {"Hippity hoppity this is my property": ""})
 
   models = [
     ("Certified Herbalist", "CertifiedHerbalistDrives", "CertifiedHerbalistScore"),
