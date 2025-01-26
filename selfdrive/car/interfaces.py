@@ -526,7 +526,7 @@ class CarInterfaceBase(ABC):
         params.put_bool("ExperimentalMode", not experimental_mode)
       self.traffic_mode_changed = False
 
-    if self.gap_counter == CRUISE_LONG_PRESS * 2:  # should be CRUISE_LONG_PRESS * 5 duration for traffic mode activation  
+    if self.gap_counter == CRUISE_LONG_PRESS * 4:  # should be CRUISE_LONG_PRESS * 5 duration for traffic mode activation  
       self.traffic_mode_active = not self.traffic_mode_active
       self.traffic_mode_changed = frogpilot_toggles.experimental_mode_via_distance
 
