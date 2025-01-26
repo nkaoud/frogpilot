@@ -20,7 +20,7 @@ if __name__ == "__main__":
   bg = QLabel("", alignment=Qt.AlignCenter)
 
   hello_label = QLabel("TestDrive", alignment=Qt.AlignCenter)
-  hello_label.move(370, 100)
+  hello_label.move(50, 50)
   hello_label.resize(60, 60)
   hello_label.setStyleSheet("border: 1px solid black;")
   vlayout.addWidget(hello_label, alignment=Qt.AlignCenter)
