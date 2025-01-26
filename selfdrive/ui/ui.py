@@ -19,6 +19,9 @@ if __name__ == "__main__":
 
   bg = QLabel("", alignment=Qt.AlignCenter)
 
+  hello_label = QLabel("TestDrive", alignment=Qt.AlignCenter)
+  vlayout.addWidget(hello_label, alignment=Qt.AlignCenter)
+  
   alert1 = QLabel()
   alert2 = QLabel()
   vlayout = QVBoxLayout()
