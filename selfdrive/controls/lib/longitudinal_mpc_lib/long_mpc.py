@@ -191,7 +191,7 @@ def gen_long_ocp():
   # or other object. In e2e mode we can use x_position targets as a cost
   # instead.
   ##  origunal values (v_ego + 10.), ##
-  costs = [((x_obstacle - x_ego) - (desired_dist_comfort)) / (v_ego + 8.),
+  costs = [((x_obstacle - x_ego) - (desired_dist_comfort)) / (v_ego + 10.),
            x_ego,
            v_ego,
            a_ego,
@@ -206,7 +206,7 @@ def gen_long_ocp():
   constraints = vertcat(v_ego,
                         (a_ego - a_min),
                         (a_max - a_ego),
-                        ((x_obstacle - x_ego) - lead_danger_factor * (desired_dist_comfort)) / (v_ego + 8.))
+                        ((x_obstacle - x_ego) - lead_danger_factor * (desired_dist_comfort)) / (v_ego + 10.))
   ##  origunal values (v_ego + 10.), ##
   ocp.model.con_h_expr = constraints
 
